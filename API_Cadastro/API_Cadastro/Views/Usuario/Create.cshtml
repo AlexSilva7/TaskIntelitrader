@@ -1,0 +1,47 @@
+﻿
+
+@model Usuario
+
+<form method="post">
+
+    <div class="border p-3 mt-4">
+        <h2 class="text-primary"> Criar usuário</h2>
+        <hr/>    
+    </div>
+
+    <div asp-validation-summary="All"></div>
+
+    <div class="mb-3">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control"></input>
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Surname"></label>
+        <input asp-for="Surname" class="form-control"></input>
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Age"></label>
+        <input asp-for="Age" class="form-control"></input>
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn-primary btn-primary" 
+    style="width: 150px">Create</button>
+    <a asp-controller="Usuario" asp-action="Index" 
+    class="btn-primary btn-secondary" style="width:150px">
+    Voltar
+    </a>
+</form>
+
+<!--
+    Validacao no lado do cliente
+-->
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
