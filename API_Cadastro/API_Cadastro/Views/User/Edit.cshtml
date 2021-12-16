@@ -2,10 +2,10 @@
 
 @model Usuario
 
-<form method="post">
+<form method="post" asp-action="Edit">
 
     <div class="border p-3 mt-4">
-        <h2 class="text-primary"> Criar usuário</h2>
+        <h2 class="text-primary"> Editar usuário</h2>
         <hr/>    
     </div>
 
@@ -30,8 +30,9 @@
     </div>
 
     <button type="submit" class="btn-primary btn-primary" 
-    style="width: 150px">Create</button>
-    <a asp-controller="Usuario" asp-action="Index" 
+    style="width: 150px">Update</button>
+
+    <a asp-controller="User" asp-action="Index" 
     class="btn-primary btn-secondary" style="width:150px">
     Voltar
     </a>

@@ -3,6 +3,11 @@
     ViewData["Title"] = "Index";
 }
 
+@if(TempData["success"] != null)
+{
+    <h2>@TempData["success"]</h2>    
+}
+
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
@@ -10,7 +15,7 @@
         </div>
 
         <div class="col-6 text-end">
-            <a asp-controller="Usuario" asp-action="Create" class="btn btn-primary">
+            <a asp-controller="User" asp-action="Create" class="btn btn-primary">
                 Criar novo usuario
             </a>
         </div>
@@ -27,6 +32,8 @@ style = "width:100%">
             <th> Sobrenome </th>
             <th> Idade </th>
             <th> Data </th>
+
+            <th></th>
         </tr>
 
     </thead>
@@ -49,6 +56,22 @@ style = "width:100%">
                 </td>
                 <td width="30%">
                     @obj.CreationDate
+                </td>
+
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller = "User" asp-action = "Edit" asp-route-id = "@obj.ID"
+                        class="btn btn-primary mx-2"> 
+                            <i class="bi bi-pencil-square"></i>
+                            Editar
+                        </a>
+
+                        <a asp-controller = "User" asp-action = "Delete" asp-route-id = "@obj.ID"
+                        class="btn btn-danger mx-2"> 
+                            <i class="bi bi-trash-fill"></i>
+                            Deletar
+                        </a>
+                    </div>
                 </td>
             </tr>
         }
