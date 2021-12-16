@@ -11,9 +11,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API_Cadastro.Migrations
 {
-    [DbContext(typeof(UsuarioDbContext))]
-    [Migration("20211215160136_AdicionaUsuariosAoBanco")]
-    partial class AdicionaUsuariosAoBanco
+    [DbContext(typeof(UserDbContext))]
+    [Migration("20211216161729_AddUsersToDataBase")]
+    partial class AddUsersToDataBase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,12 +40,11 @@ namespace API_Cadastro.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Surname")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

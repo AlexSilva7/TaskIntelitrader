@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API_Cadastro.Migrations
 {
-    public partial class AdicionaUsuariosAoBanco : Migration
+    public partial class AddUsersToDataBase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Usuarios",
+                name: "Users",
                 columns: table => new
                 {
                     ID = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -21,14 +21,14 @@ namespace API_Cadastro.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Usuarios", x => x.ID);
+                    table.PrimaryKey("PK_Users", x => x.ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Usuarios");
+                name: "Users");
         }
     }
 }

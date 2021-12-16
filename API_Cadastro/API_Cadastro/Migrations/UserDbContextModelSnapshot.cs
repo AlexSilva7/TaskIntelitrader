@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API_Cadastro.Migrations
 {
-    [DbContext(typeof(UsuarioDbContext))]
-    partial class UsuarioDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(UserDbContext))]
+    partial class UserDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -38,12 +38,11 @@ namespace API_Cadastro.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Surname")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
