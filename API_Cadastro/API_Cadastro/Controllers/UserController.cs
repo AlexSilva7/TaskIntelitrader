@@ -6,6 +6,15 @@ namespace API_Cadastro.Controllers
 {
     public class UserController : Controller
     {
+        /*
+        private readonly ILogger<UserController> _logger;
+
+        public UserController(ILogger<UserController> logger)
+        {
+            _logger = logger;
+        }
+        */
+
         private readonly UserDbContext _db;
 
         public UserController(UserDbContext db)
@@ -53,6 +62,11 @@ namespace API_Cadastro.Controllers
         {
 
             if (id == null || id == "")
+            {
+                return BadRequest("Objeto invalido!");
+            }
+
+            if (obj.FirstName == null || obj.FirstName == "")
             {
                 return BadRequest("Objeto invalido!");
             }
