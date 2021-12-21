@@ -30,5 +30,6 @@ namespace API_Cadastro.Migrations
             migrationBuilder.DropTable(
                 name: "Users");
         }
+
     }
 }

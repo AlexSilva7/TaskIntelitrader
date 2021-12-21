@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    restart: always
+    ports:
+      - 1433:1433
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: r00tAPI1234
+      MSSQL_PID: Express
+      
+
+  
+
+   
