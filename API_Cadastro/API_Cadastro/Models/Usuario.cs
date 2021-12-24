@@ -18,11 +18,12 @@ namespace API_Cadastro.Models
         public string? Surname { get; set; }
 
         [Required]
-        public int Age { get; set; }
+        public int Age { get; set; } = -1;
         
 
         [Required]
         public DateTime CreationDate { get; set; } = DateTime.Now;
+
 
     }
 }

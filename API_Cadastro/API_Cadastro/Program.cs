@@ -10,17 +10,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<UserDbContext>(options => options.UseSqlServer(
+builder.Services.AddDbContext<IUserDbContext, UserDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 
-
+//injeção de dependencia
+//builder.Services.AddScoped<IUserDbContext>();
 
 //Adiciona o proprio serviço de logs
 builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderConfiguration
 {
     LogLevel = LogLevel.Information
-
 }));
 
 

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API_Cadastro.Data
 {
-    public class UserDbContext : DbContext
+    public class UserDbContext : DbContext, IUserDbContext
     {
         public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
         {

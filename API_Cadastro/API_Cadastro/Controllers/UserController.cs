@@ -5,15 +5,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API_Cadastro.Controllers
 {
-    public class UserController : Controller
+    public class UserController : Controller, IUserController
     {
         private readonly ILogger<UserController> _logger;
         private readonly UserDbContext _db;
 
-        public UserController(UserDbContext db, ILogger<UserController> log)
+        public UserController(IUserDbContext db, ILogger<UserController> log)
         {
             _logger = log;
-            _db = db;
+            _db = (UserDbContext) db;
         }
 
         [HttpGet("Users/")]
@@ -63,7 +63,7 @@ namespace API_Cadastro.Controllers
                 return BadRequest("Objeto invalido!");
             }
 
-            if (obj.Age <= 0)
+            if (obj.Age < 0)
             {
                 _logger.LogInformation(BadRequest().StatusCode.ToString() + 
                     " Requisição mal sucedida(Cliente) /Users -> POST");
@@ -135,6 +135,7 @@ namespace API_Cadastro.Controllers
                 userFromDb.Name = obj.Name;
                 userFromDb.Surname = obj.Surname;
                 userFromDb.Age = obj.Age;
+
                 _db.Users.Update(userFromDb);
                 _db.SaveChanges();
                 _logger.LogInformation(Ok().StatusCode.ToString() + 
