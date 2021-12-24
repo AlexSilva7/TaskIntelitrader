@@ -37,6 +37,8 @@
             string data = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString();
             string caminhoArquivoLog = @$"..\Logs_Aplicacao\API_Cadastro_{data}.txt";
 
+            //string caminhoArquivoLog = @$"Log/API_Cadastro_{data}.txt";
+
             using (StreamWriter streamWriter = new StreamWriter(caminhoArquivoLog, true))
             {
                 streamWriter.WriteLine(mensagem);

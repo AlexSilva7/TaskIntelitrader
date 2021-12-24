@@ -15,6 +15,7 @@ builder.Services.AddDbContext<UserDbContext>(options => options.UseSqlServer(
     ));
 
 
+
 //Adiciona o proprio serviço de logs
 builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderConfiguration
 {
@@ -24,7 +25,13 @@ builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderCon
 
 
 builder.Services.AddRazorPages();
+
 var app = builder.Build();
+
+
+//Cria as tabelas caso não exista
+app.Services.CreateScope().ServiceProvider.GetRequiredService<UserDbContext>().Database.EnsureCreated();
+//app.Services.CreateScope().ServiceProvider.GetRequiredService<UserDbContext>().Database.Migrate();
 
 
 // Configure the HTTP request pipeline.

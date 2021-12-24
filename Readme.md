@@ -1,4 +1,6 @@
-
+# Comando para rodar o programa
+# Na pasta do docker compose
+# docker-compose up --build
 # Eu, como usuário, desejo efetuar meu cadastro
 
 Este ticket tem como objetivo criar uma API que permita o usuário fazer seu cadastro no sistema.
