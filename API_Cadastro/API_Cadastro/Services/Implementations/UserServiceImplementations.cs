@@ -1,7 +1,7 @@
 ﻿using API_Cadastro.Data;
 using API_Cadastro.Models;
 
-/*
+
 namespace API_Cadastro.Services.Implementations
 {
     public class UserServiceImplementations : IUserService
@@ -14,45 +14,37 @@ namespace API_Cadastro.Services.Implementations
             _db = db;
         }
 
+
+        public Usuario FindByID(string id)
+        {
+            return _db.Users.Find(id);
+        }
+
         public List<Usuario> GetAll()
         {
             return _db.Users.ToList();
         }
 
-        public Usuario Create(Usuario user)
+        public void Create(Usuario user)
         {
-            try
-            {
-                _db.Add(user);
-                _db.SaveChanges();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return user;
+             _db.Add(user);
+             _db.SaveChanges();
         }
 
-        public void Delete(string id)
+        public void Delete(Usuario user)
         {
-            try
-            {
-                var userFromDb = _db.Users.Find(id);
 
-                if (userFromDb == null)
-                {
-                    
-                }
+            //var userFromDb = _db.Users.Find(id);
+            _db.Users.Remove(user);
+            _db.SaveChanges();
 
-            }
-            
-         
+
         }
 
-        public Usuario Update(Usuario user)
+        public void Update(Usuario user)
         {
-            throw new NotImplementedException();
+            _db.Users.Update(user);
+            _db.SaveChanges();
         }
     }
 }
-*/

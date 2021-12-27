@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 
 namespace API_Cadastro.Tests
 {
-    public class BancoFake : IUserDbContext
-    {
-        public List<Usuario> Users { get; set; }
-        DbSet<Usuario> IUserDbContext.Users { get ; set ; }
-
+    public class BancoFake { 
+        public  List<Usuario> Users { get; set; }
+        
     }
 }

@@ -1,0 +1,399 @@
+11:42:03 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+11:42:09 -> Information: 20101 - Executed DbCommand (492ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [API];
+11:42:09 -> Information: 20101 - Executed DbCommand (152ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [API] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+11:42:09 -> Information: 20101 - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+11:42:09 -> Information: 20101 - Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [ID] nvarchar(450) NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [Surname] nvarchar(max) NULL,
+    [Age] int NOT NULL,
+    [CreationDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([ID])
+);
+11:42:09 -> Warning: 60 - Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+11:42:09 -> Warning: 35 - No XML encryptor configured. Key {dbc62986-1a1e-4860-9c1e-541b5d706a58} may be persisted to storage in unencrypted form.
+11:42:09 -> Information: 14 - Now listening on: http://[::]:80
+11:42:09 -> Information: 0 - Application started. Press Ctrl+C to shut down.
+11:42:09 -> Information: 0 - Hosting environment: Production
+11:42:09 -> Information: 0 - Content root path: /app/
+11:51:47 -> Warning: 3 - Failed to determine the https port for redirect.
+11:51:47 -> Information: 0 - Executando /Users -> GET
+11:51:47 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+11:51:47 -> Information: 20101 - Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+11:51:47 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+11:51:52 -> Information: 0 - Executando /Users -> GET
+11:51:52 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+11:51:52 -> Information: 20101 - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+11:51:52 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+11:52:35 -> Information: 0 - Application is shutting down...
+10:07:22 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+10:07:25 -> Information: 20101 - Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+10:07:25 -> Information: 20101 - Executed DbCommand (245ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+10:07:26 -> Information: 14 - Now listening on: https://localhost:7063
+10:07:26 -> Information: 14 - Now listening on: http://localhost:5063
+10:07:26 -> Information: 0 - Application started. Press Ctrl+C to shut down.
+10:07:26 -> Information: 0 - Hosting environment: Development
+10:07:26 -> Information: 0 - Content root path: C:\Users\Plataforma22\Desktop\TaskIntelitrader - Copia\API_Cadastro\API_Cadastro\
+10:07:29 -> Information: 0 - Executando /Users -> GET
+10:07:29 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+10:07:29 -> Information: 20101 - Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+10:07:29 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+10:07:57 -> Information: 0 - Executando /Users -> GET
+10:07:57 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+10:07:57 -> Information: 20101 - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+10:07:57 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+10:08:02 -> Information: 0 -  Executando /Users -> POST
+10:08:02 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+10:08:02 -> Information: 20101 - Executed DbCommand (39ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [Age], [CreationDate], [FirstName], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+10:08:02 -> Information: 0 - 200 Resposta bem sucedida /Users -> POST
+10:08:09 -> Information: 0 -  Executando /Users -> POST
+10:08:09 -> Information: 0 - 400 Requisição mal sucedida(Cliente) /Users -> POST
+10:08:19 -> Information: 0 -  Executando /Users -> POST
+10:08:19 -> Information: 0 - 400 Requisição mal sucedida(Cliente) /Users -> POST
+10:08:22 -> Information: 0 -  Executando /Users -> POST
+10:08:22 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+10:08:22 -> Information: 20101 - Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [Age], [CreationDate], [FirstName], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+10:08:22 -> Information: 0 - 200 Resposta bem sucedida /Users -> POST
+10:08:26 -> Information: 0 - Executando /Users -> GET
+10:08:26 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+10:08:26 -> Information: 20101 - Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+10:08:26 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+11:57:28 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+11:57:29 -> Information: 20101 - Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+11:57:29 -> Information: 20101 - Executed DbCommand (44ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+11:57:29 -> Information: 14 - Now listening on: https://localhost:7063
+11:57:29 -> Information: 14 - Now listening on: http://localhost:5063
+11:57:29 -> Information: 0 - Application started. Press Ctrl+C to shut down.
+11:57:29 -> Information: 0 - Hosting environment: Development
+11:57:29 -> Information: 0 - Content root path: C:\Users\Plataforma22\Desktop\TaskIntelitrader - Copia\API_Cadastro\API_Cadastro\
+11:57:29 -> Information: 0 - Executando /Users -> GET
+11:57:29 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+11:57:30 -> Information: 20101 - Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+11:57:30 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+13:19:22 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:19:22 -> Information: 20101 - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+13:19:22 -> Information: 20101 - Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+13:19:22 -> Information: 14 - Now listening on: https://localhost:7063
+13:19:22 -> Information: 14 - Now listening on: http://localhost:5063
+13:19:22 -> Information: 0 - Application started. Press Ctrl+C to shut down.
+13:19:22 -> Information: 0 - Hosting environment: Development
+13:19:22 -> Information: 0 - Content root path: C:\Users\Plataforma22\Desktop\TaskIntelitrader - Copia\API_Cadastro\API_Cadastro\
+13:19:23 -> Information: 0 - Executando /Users -> GET
+13:19:23 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:19:23 -> Information: 20101 - Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+13:19:23 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+13:19:33 -> Information: 0 - Executando /Users -> GET
+13:19:33 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:19:33 -> Information: 20101 - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+13:19:33 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+13:19:51 -> Information: 0 - Executando /Users/63c00457-89f4-4cf9-b2db-f4e0035acb89 -> PUT
+13:19:51 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:19:52 -> Information: 20101 - Executed DbCommand (28ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0
+13:19:52 -> Information: 20101 - Executed DbCommand (14ms) [Parameters=[@p4='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [Age] = @p0, [CreationDate] = @p1, [FirstName] = @p2, [Surname] = @p3
+WHERE [ID] = @p4;
+SELECT @@ROWCOUNT;
+13:19:52 -> Information: 0 - 200 Resposta bem sucedida /Users/63c00457-89f4-4cf9-b2db-f4e0035acb89 -> PUT
+13:20:01 -> Information: 0 - Executando /Users/63c00457-89f4-4cf9-b2db -> PUT
+13:20:01 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:20:01 -> Information: 20101 - Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0
+13:20:01 -> Information: 0 - 500 Erro do servidor /Users/63c00457-89f4-4cf9-b2db -> PUT
+13:20:06 -> Information: 0 - Executando /Users/63c00457-89f4-4cf9-b2db -> PUT
+13:20:06 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:20:06 -> Information: 20101 - Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0
+13:20:06 -> Information: 0 - 500 Erro do servidor /Users/63c00457-89f4-4cf9-b2db -> PUT
+13:20:12 -> Information: 0 - Executando /Users/63c00457-89f4-4cf9-b2db -> PUT
+13:20:12 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:20:12 -> Information: 20101 - Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0
+13:20:12 -> Information: 0 - 500 Erro do servidor /Users/63c00457-89f4-4cf9-b2db -> PUT
+13:23:16 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:23:16 -> Information: 20101 - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+13:23:16 -> Information: 20101 - Executed DbCommand (36ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+13:23:17 -> Information: 14 - Now listening on: https://localhost:7063
+13:23:17 -> Information: 14 - Now listening on: http://localhost:5063
+13:23:17 -> Information: 0 - Application started. Press Ctrl+C to shut down.
+13:23:17 -> Information: 0 - Hosting environment: Development
+13:23:17 -> Information: 0 - Content root path: C:\Users\Plataforma22\Desktop\TaskIntelitrader - Copia\API_Cadastro\API_Cadastro\
+13:23:17 -> Information: 0 - Executando /Users -> GET
+13:23:17 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:23:17 -> Information: 20101 - Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+13:23:17 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+13:23:23 -> Information: 0 - Executando /Users/63c00457-89f4-4cf9-b2db -> PUT
+13:23:23 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:23:23 -> Information: 20101 - Executed DbCommand (19ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0
+13:23:23 -> Information: 0 - 400 Requisição mal sucedida(Cliente) /Users/63c00457-89f4-4cf9-b2db -> PUT
+13:23:25 -> Information: 0 - Executando /Users/63c00457-89f4-4cf9-b2db -> PUT
+13:23:25 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:23:25 -> Information: 20101 - Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0
+13:23:25 -> Information: 0 - 400 Requisição mal sucedida(Cliente) /Users/63c00457-89f4-4cf9-b2db -> PUT
+13:23:30 -> Information: 0 - Executando /Users -> GET
+13:23:30 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:23:30 -> Information: 20101 - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+13:23:30 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+13:24:54 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:24:54 -> Information: 20101 - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+13:24:54 -> Information: 20101 - Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+13:24:55 -> Information: 14 - Now listening on: https://localhost:7063
+13:24:55 -> Information: 14 - Now listening on: http://localhost:5063
+13:24:55 -> Information: 0 - Application started. Press Ctrl+C to shut down.
+13:24:55 -> Information: 0 - Hosting environment: Development
+13:24:55 -> Information: 0 - Content root path: C:\Users\Plataforma22\Desktop\TaskIntelitrader - Copia\API_Cadastro\API_Cadastro\
+13:55:17 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:55:17 -> Information: 20101 - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+13:55:17 -> Information: 20101 - Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+13:55:18 -> Information: 14 - Now listening on: https://localhost:7063
+13:55:18 -> Information: 14 - Now listening on: http://localhost:5063
+13:55:18 -> Information: 0 - Application started. Press Ctrl+C to shut down.
+13:55:18 -> Information: 0 - Hosting environment: Development
+13:55:18 -> Information: 0 - Content root path: C:\Users\Plataforma22\Desktop\TaskIntelitrader - Copia\API_Cadastro\API_Cadastro\
+13:55:18 -> Information: 0 - Executando /Users -> GET
+13:55:18 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:55:18 -> Information: 20101 - Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+13:55:18 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+13:56:47 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:56:47 -> Information: 20101 - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+13:56:47 -> Information: 20101 - Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+13:56:47 -> Information: 14 - Now listening on: https://localhost:7063
+13:56:47 -> Information: 14 - Now listening on: http://localhost:5063
+13:56:47 -> Information: 0 - Application started. Press Ctrl+C to shut down.
+13:56:47 -> Information: 0 - Hosting environment: Development
+13:56:47 -> Information: 0 - Content root path: C:\Users\Plataforma22\Desktop\TaskIntelitrader - Copia\API_Cadastro\API_Cadastro\
+13:56:48 -> Information: 0 - Executando /Users -> GET
+13:56:48 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:56:48 -> Information: 20101 - Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+13:56:48 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+13:56:54 -> Information: 0 -  Executando /Users -> POST
+13:56:54 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:56:55 -> Information: 20101 - Executed DbCommand (21ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [Age], [CreationDate], [FirstName], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+13:56:55 -> Information: 0 - 200 Resposta bem sucedida /Users -> POST
+13:56:58 -> Information: 0 - Executando /Users -> GET
+13:56:58 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+13:56:58 -> Information: 20101 - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+13:56:58 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+17:00:02 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+17:00:12 -> Information: 20101 - Executed DbCommand (402ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [API];
+17:00:12 -> Information: 20101 - Executed DbCommand (161ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [API] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+17:00:12 -> Information: 20101 - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+17:00:12 -> Information: 20101 - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [ID] nvarchar(450) NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [Surname] nvarchar(max) NULL,
+    [Age] int NOT NULL,
+    [CreationDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([ID])
+);
+17:00:12 -> Warning: 60 - Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+17:00:12 -> Warning: 35 - No XML encryptor configured. Key {ad0f0310-3246-43d4-809f-491f23886e29} may be persisted to storage in unencrypted form.
+17:00:12 -> Information: 14 - Now listening on: http://[::]:80
+17:00:12 -> Information: 0 - Application started. Press Ctrl+C to shut down.
+17:00:12 -> Information: 0 - Hosting environment: Production
+17:00:12 -> Information: 0 - Content root path: /app/
+17:00:13 -> Warning: 3 - Failed to determine the https port for redirect.
+17:00:13 -> Information: 0 - Executando /Users -> GET
+17:00:13 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+17:00:13 -> Information: 20101 - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+17:00:13 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+17:00:19 -> Information: 0 -  Executando /Users -> POST
+17:00:19 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+17:00:19 -> Information: 20101 - Executed DbCommand (26ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [Age], [CreationDate], [FirstName], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+17:00:19 -> Information: 0 - 200 Resposta bem sucedida /Users -> POST
+17:00:27 -> Information: 0 -  Executando /Users -> POST
+17:00:27 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+17:00:27 -> Information: 20101 - Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [Age], [CreationDate], [FirstName], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+17:00:27 -> Information: 0 - 200 Resposta bem sucedida /Users -> POST
+17:00:30 -> Information: 0 -  Executando /Users -> POST
+17:00:30 -> Information: 0 - 400 Requisição mal sucedida(Cliente) /Users -> POST
+17:00:35 -> Information: 0 - Executando /Users -> GET
+17:00:35 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+17:00:35 -> Information: 20101 - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+17:00:35 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET

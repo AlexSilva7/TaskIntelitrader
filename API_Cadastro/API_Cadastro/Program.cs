@@ -3,19 +3,20 @@ using API_Cadastro.Logging;
 using Microsoft.Build.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-
+using API_Cadastro.Services;
+using API_Cadastro.Services.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<IUserDbContext, UserDbContext>(options => options.UseSqlServer(
+builder.Services.AddDbContext<UserDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 
-//injeção de dependencia
-//builder.Services.AddScoped<IUserDbContext>();
+builder.Services.AddScoped<IUserService, UserServiceImplementations>();
+
 
 //Adiciona o proprio serviço de logs
 builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderConfiguration

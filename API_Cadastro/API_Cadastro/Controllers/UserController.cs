@@ -2,18 +2,21 @@
 using API_Cadastro.Models;
 using API_Cadastro.Logging;
 using Microsoft.AspNetCore.Mvc;
+using API_Cadastro.Services;
 
 namespace API_Cadastro.Controllers
 {
-    public class UserController : Controller, IUserController
+    public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;
-        private readonly UserDbContext _db;
+        //private readonly IUserDbContext _db;
+        private readonly IUserService _userService;
 
-        public UserController(IUserDbContext db, ILogger<UserController> log)
+        public UserController(IUserService userService, ILogger<UserController> log)
         {
             _logger = log;
-            _db = (UserDbContext) db;
+            _userService = userService;
+            //_db =  db;
         }
 
         [HttpGet("Users/")]
@@ -24,7 +27,7 @@ namespace API_Cadastro.Controllers
 
             try
             {
-                IEnumerable<Usuario> objUsuarioList = _db.Users.ToList();
+                IEnumerable<Usuario> objUsuarioList = _userService.GetAll();
 
                 _logger.LogInformation(Ok().StatusCode.ToString() + 
                     " Resposta bem sucedida /Users -> GET");
@@ -73,8 +76,7 @@ namespace API_Cadastro.Controllers
 
             try
             {
-                _db.Users.Add(obj);
-                _db.SaveChanges();
+                _userService.Create(obj);
 
                 _logger.LogInformation(Ok().StatusCode.ToString() + 
                     " Resposta bem sucedida /Users -> POST");
@@ -131,13 +133,22 @@ namespace API_Cadastro.Controllers
 
             try
             {
-                var userFromDb = _db.Users.Find(id);
+
+                var userFromDb = _userService.FindByID(id);
+
+                if (userFromDb == null)
+                {
+                    _logger.LogInformation(BadRequest().StatusCode.ToString() +
+                        $" Requisição mal sucedida(Cliente) /Users/{id} -> PUT");
+                    return BadRequest("Usuario nao encontrado!");
+                }
+
                 userFromDb.Name = obj.Name;
                 userFromDb.Surname = obj.Surname;
                 userFromDb.Age = obj.Age;
 
-                _db.Users.Update(userFromDb);
-                _db.SaveChanges();
+                _userService.Update(userFromDb);
+
                 _logger.LogInformation(Ok().StatusCode.ToString() + 
                     $" Resposta bem sucedida /Users/{id} -> PUT");
 
@@ -169,7 +180,9 @@ namespace API_Cadastro.Controllers
 
             try
             {
-                var userFromDb = _db.Users.Find(id);
+
+                var userFromDb = _userService.FindByID(id);
+
                 if (userFromDb == null)
                 {
                     _logger.LogInformation(BadRequest().StatusCode.ToString() + 
@@ -178,8 +191,7 @@ namespace API_Cadastro.Controllers
                     return BadRequest("Usuario nao encontrado!");
                 }
 
-                _db.Users.Remove(userFromDb);
-                _db.SaveChanges();
+                _userService.Delete(userFromDb);
 
                 _logger.LogInformation(Ok().StatusCode.ToString() + 
                     $" Resposta bem sucedida /Users/{id} -> DELETE");

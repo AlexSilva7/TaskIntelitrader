@@ -5,9 +5,10 @@ namespace API_Cadastro.Services
 {
     public interface IUserService
     {
-        Usuario Create(Usuario user);
+        Usuario FindByID(string id);
         List<Usuario> GetAll();
-        Usuario Update(Usuario user);
-        void Delete(string id);
+        void Create(Usuario user);
+        void Update(Usuario user);
+        void Delete(Usuario user);
     }
 }

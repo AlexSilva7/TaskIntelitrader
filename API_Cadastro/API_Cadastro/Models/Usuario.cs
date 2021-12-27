@@ -24,7 +24,6 @@ namespace API_Cadastro.Models
         [Required]
         public DateTime CreationDate { get; set; } = DateTime.Now;
 
-
     }
 }
 
