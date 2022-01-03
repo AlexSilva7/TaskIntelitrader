@@ -1,0 +1,45 @@
+15:19:17 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+15:19:25 -> Information: 20101 - Executed DbCommand (746ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [API];
+15:19:25 -> Information: 20101 - Executed DbCommand (381ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [API] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+15:19:25 -> Information: 20101 - Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+15:19:25 -> Information: 20101 - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [ID] nvarchar(450) NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [Surname] nvarchar(max) NULL,
+    [Age] int NOT NULL,
+    [CreationDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([ID])
+);
+15:19:25 -> Warning: 60 - Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+15:19:25 -> Warning: 35 - No XML encryptor configured. Key {6d48f51a-b5b2-49f0-97dd-297441f230b4} may be persisted to storage in unencrypted form.
+15:19:25 -> Information: 14 - Now listening on: http://[::]:80
+15:19:25 -> Information: 0 - Application started. Press Ctrl+C to shut down.
+15:19:25 -> Information: 0 - Hosting environment: Production
+15:19:25 -> Information: 0 - Content root path: /app/
+15:35:57 -> Warning: 3 - Failed to determine the https port for redirect.
+15:35:57 -> Information: 0 - Executando /Users -> GET
+15:35:57 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+15:35:58 -> Information: 20101 - Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+15:35:58 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
+15:36:05 -> Information: 0 -  Executando /Users -> POST
+15:36:05 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+15:36:06 -> Information: 20101 - Executed DbCommand (56ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [Age], [CreationDate], [FirstName], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+15:36:06 -> Information: 0 - 200 Resposta bem sucedida /Users -> POST
+15:36:09 -> Information: 0 - Executando /Users -> GET
+15:36:09 -> Information: 10403 - Entity Framework Core 6.0.1 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.1' with options: None
+15:36:09 -> Information: 20101 - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Age], [u].[CreationDate], [u].[FirstName], [u].[Surname]
+FROM [Users] AS [u]
+15:36:09 -> Information: 0 - 200 Resposta bem sucedida /Users -> GET
