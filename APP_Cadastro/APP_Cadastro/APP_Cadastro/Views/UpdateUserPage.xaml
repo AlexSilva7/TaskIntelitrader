@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_Cadastro.UpdateUserPage" Background="White">
+
+    <StackLayout Margin="20,35,20,25">
+
+        <Image Source="https://www.vargemgrandepaulista.sp.gov.br/tarifazero/imagens/telas%20cadastro-cadastro.png"
+               HeightRequest="150"  
+               Margin="10,0,10,0"
+               HorizontalOptions="Center"/>
+
+        <Label TextColor="Black" 
+               FontSize="Title"
+               Text="Atualização de usuários" 
+               HorizontalOptions="Center" 
+               Margin="0, 0, 0, 20"/>
+
+        <Frame BorderColor="Black"
+               WidthRequest="500"
+               HorizontalOptions="Center"
+               HeightRequest="300"
+               Padding="10" 
+               CornerRadius="30" 
+               HasShadow="True"
+               Background="LightGray">
+
+            <StackLayout WidthRequest="200" Padding="0, 30, 0, 0">
+
+                <Entry x:Name="InputName"
+                        Margin="2"
+                        FontSize="Large"
+                        Placeholder="Name"
+                        PlaceholderColor="LightSlateGray"
+                        TextColor="Black"
+                        ClearButtonVisibility="WhileEditing"/>
+
+                <Entry FontSize="Large"
+                       Margin="0, 20, 0, 0"
+                       x:Name="InputSurname"
+                       Placeholder="Surname" 
+                       PlaceholderColor="LightSlateGray"
+                       TextColor="Black"
+                       ClearButtonVisibility="WhileEditing"/>
+
+                <Entry x:Name="InputAge"
+                       Margin="0, 20, 0, 0"
+                       FontSize="Large"
+                       Placeholder="Age"
+                       PlaceholderColor="LightSlateGray"
+                       TextColor="Black"
+                       ClearButtonVisibility="WhileEditing"/>
+
+            </StackLayout>
+        </Frame>
+
+        <StackLayout WidthRequest="75">
+            <Button Text="Atualizar"
+                    Clicked="OnUpdateButtonClicked" 
+                    TextColor="Black"
+                    BackgroundColor="White"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    CornerRadius="50"
+                    HeightRequest="50"
+                    WidthRequest="110"
+                    HorizontalOptions="Center"
+                    Margin="0, 25, 0, 35"
+                    />
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
+
+

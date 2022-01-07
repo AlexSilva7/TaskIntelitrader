@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_Cadastro.MainPage" Background="Black">
+
+    <StackLayout Margin="20,35,20,25">
+
+        <Image Source="https://www.vargemgrandepaulista.sp.gov.br/tarifazero/imagens/telas%20cadastro-cadastro.png"
+               HeightRequest="150"  
+               Margin="10,0,10,0"
+               HorizontalOptions="Center"/>
+
+        <Label TextColor="White" 
+               FontSize="30"
+               Text="Cadastro de usuários" 
+               HorizontalOptions="Center" 
+               Margin="0, 0, 0, 20"/>
+
+        <Frame BorderColor="White"
+               WidthRequest="500"
+               HorizontalOptions="Center"
+               HeightRequest="300"
+               Padding="10" 
+               Margin="0"
+               CornerRadius="30" 
+               HasShadow="True"
+               Background="Transparent">
+
+            <StackLayout WidthRequest="200" Padding="0, 30, 0, 0">
+
+                <Entry x:Name="InputName"
+                        Margin="2"
+                        FontSize="Large"
+                        Placeholder="Name"
+                        PlaceholderColor="LightGray"
+                        TextColor="White"
+                        ClearButtonVisibility="WhileEditing"
+                        />
+
+                <Entry FontSize="Large"
+                       Margin="0, 20, 0, 0"
+                       x:Name="InputSurname"
+                       Placeholder="Surname" 
+                       PlaceholderColor="LightGray"
+                       TextColor="White"
+                       ClearButtonVisibility="WhileEditing"
+                       />
+
+                <Entry x:Name="InputAge"
+                       Margin="0, 20, 0, 0"
+                       FontSize="Large"
+                       Placeholder="Age"
+                       PlaceholderColor="LightGray"
+                       TextColor="White"
+                       ClearButtonVisibility="WhileEditing"
+                       />
+
+            </StackLayout>
+        </Frame>
+
+        <StackLayout WidthRequest="75">
+            <Button Text="Cadastrar"
+                    Clicked="OnRegisterButtonClicked" 
+                    TextColor="White"
+                    BackgroundColor="Black"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    CornerRadius="50"
+                    HeightRequest="50"
+                    WidthRequest="110"
+                    HorizontalOptions="Center"
+                    Margin="0, 25, 0, 35"/>
+        </StackLayout>
+        
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_Cadastro.UserPage" Background="Black">
+
+    <StackLayout>
+        <CollectionView x:Name="collectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <StackLayout>
+
+                        <Frame CornerRadius="10" 
+                                   BorderColor="SlateGray" 
+                                   BackgroundColor="White"
+                                   WidthRequest="320"
+                                   HorizontalOptions="Center"
+                                   Margin="0, 5, 0, 5"
+                                   HasShadow="True">
+
+                            <StackLayout>
+
+                                <Grid>
+
+                                    <ImageButton Source="https://thumbs.dreamstime.com/b/o-gerbage-vermelho-do-lixo-%C3%ADcone-recicla-vetor-projeto-gr%C3%A1fico-cesto-de-papel-%C3%BAnico-113978945.jpg"
+                                               HeightRequest="30"
+                                               Margin="0"
+                                               HorizontalOptions="End"
+                                               VerticalOptions="Start"
+                                               Clicked="OnDeleteButtonClicked"
+                                               BindingContext="{Binding ID}"/>
+
+                                    <ImageButton Source="https://www.vargemgrandepaulista.sp.gov.br/tarifazero/imagens/telas%20cadastro-cadastro.png"
+                                               HeightRequest="30"  
+                                               Margin="0"
+                                               HorizontalOptions="Start"
+                                               VerticalOptions="Start"
+                                               Clicked="OnUpdateButtonClicked"
+                                               BindingContext="{Binding ID}"/>
+
+                                    <Image Source="https://static.vecteezy.com/ti/vetor-gratis/p1/2318271-icone-do-perfil-do-usuario-gr%C3%A1tis-vetor.jpg"
+                                               HeightRequest="75"
+                                               Margin="0"
+                                               HorizontalOptions="Center"/>
+                                </Grid>
+
+                                <Label HorizontalOptions="Center"
+                                           Margin="0, 5, 0, 0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+
+                                            <Span Text="{Binding Name}"  
+                                                  TextColor="Black"
+                                                  FontSize="Title"/>
+
+                                            <Span Text=" "  
+                                                  TextColor="Black"
+                                                  FontSize="Title"/>
+
+                                            <Span Text="{Binding Surname}"
+                                                  TextColor="Black"
+                                                  FontSize="Title"/>
+
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <BoxView Color="LightGray" WidthRequest ="1000" HeightRequest="2" Margin="0, 0, 0, 5"/>
+
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Age: "
+                                                  TextColor="Black"
+                                                  FontSize="Medium"
+                                                  />
+
+                                            <Span Text="{Binding Age}"
+                                                  TextColor="Black"
+                                                  FontSize="Medium"/>
+
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Creation Date: "
+                                                  TextColor="Black"
+                                                  FontSize="Medium"
+                                                  />
+
+                                            <Span Text="{Binding CreationDate}"  
+                                                  TextColor="Black"
+                                                  FontSize="Medium"/>
+
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                
+                            </StackLayout>
+                            
+                        </Frame>
+                        
+                    </StackLayout>
+                    
+                </DataTemplate>
+                
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+
+    </StackLayout>
+    
+</ContentPage>
+
+
+
